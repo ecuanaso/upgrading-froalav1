@@ -1,6 +1,6 @@
 <template name="layout">
   {{# if dictionaryReady }}
-  <header>
+  <header class="header front-display-header">
     {{> header }}
   </header>
   <main>
@@ -14,7 +14,15 @@
   {{ else }}
     {{> loading }}
   {{/ if }}
+  <style>
+    html {
+      font-family: 'Oswald', sans-serif;
+    }
+
+  </style>
 </template>
+
+
 <template name="loading">
   <br>
   <div class="center">

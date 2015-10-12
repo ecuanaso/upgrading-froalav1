@@ -1,3 +1,3 @@
-orion.dictionary.addDefinition('tituloDecoradores', 'texts', {
-  type: String
-});
+// orion.dictionary.addDefinition('tituloDecoradores', 'texts', {
+//   type: String
+// });

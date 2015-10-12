@@ -1,3 +1,26 @@
+// var onAfterAction = function(title, description, image) {
+// 	return function() {
+// 		if (!Meteor.isClient) {
+// 			return;
+// 		}
+// 		GAnalytics && GAnalytics.pageview();
+// 		SEO.set({
+// 			title: (title && (orion.dictionary.get('seo.title') + ' - ' + title)) || orion.dictionary.get('seo.title'),
+// 			link: {
+// 				icon: orion.dictionary.get('seo.favIcon.url'),
+// 			},
+// 			meta: {
+// 				description: description || orion.dictionary.get('seo.description')
+// 			},
+// 			og: {
+// 				title: title || orion.dictionary.get('seo.title'),
+// 				description: description || orion.dictionary.get('seo.description'),
+// 				image: image || orion.dictionary.get('seo.image.url')
+// 			}
+// 		});
+// 	}
+// }
+
 var onAfterAction = function(title, description, image) {
 	return function() {
 		if (!Meteor.isClient) {
@@ -5,21 +28,22 @@ var onAfterAction = function(title, description, image) {
 		}
 		GAnalytics && GAnalytics.pageview();
 		SEO.set({
-			title: (title && (orion.dictionary.get('seo.title') + ' - ' + title)) || orion.dictionary.get('seo.title'),
+			title: (title && (orion.dictionary.get('home page.title') + ' - ' + title)) || orion.dictionary.get('home page.title'),
 			link: {
-				icon: orion.dictionary.get('seo.favIcon.url'),
+				icon: orion.dictionary.get('home page.favIcon.url'),
 			},
 			meta: {
-				description: description || orion.dictionary.get('seo.description')
+				description: description || orion.dictionary.get('home page.description')
 			},
 			og: {
-				title: title || orion.dictionary.get('seo.title'),
-				description: description || orion.dictionary.get('seo.description'),
-				image: image || orion.dictionary.get('seo.image.url')
+				title: title || orion.dictionary.get('home page.title'),
+				description: description || orion.dictionary.get('home page.description'),
+				image: image || orion.dictionary.get('home page.image.url')
 			}
 		});
 	}
 }
+
 
 Router.route('/', {
 	name: 'home',
@@ -27,13 +51,13 @@ Router.route('/', {
 	onAfterAction: onAfterAction()
 });
 
-Router.route('/buscar', {
+Router.route('/search', {
   name: 'search',
   layoutTemplate: 'layout',
 	onAfterAction: onAfterAction('Buscar')
 });
 
-Router.route('/producto/:_id', {
+Router.route('/products/:_id', {
   name: 'products.show',
   layoutTemplate: 'layout',
 	onAfterAction: function() {
@@ -45,13 +69,13 @@ Router.route('/producto/:_id', {
 	}
 });
 
-Router.route('/categorias', {
+Router.route('/categories', {
   name: 'categories.index',
   layoutTemplate: 'layout',
 	onAfterAction: onAfterAction('Categorías')
 });
 
-Router.route('/categorias/:value/:type?', {
+Router.route('/categories/:value/:type?', {
   name: 'categories.show',
   layoutTemplate: 'layout',
 	onAfterAction: function() {
@@ -74,13 +98,13 @@ Router.route('/categorias/:value/:type?', {
 	}
 });
 
-Router.route('/tiendas', {
+Router.route('/stores', {
   name: 'stores.index',
   layoutTemplate: 'layout',
 	onAfterAction: onAfterAction('Tiendas')
 });
 
-Router.route('/tiendas/:_id', {
+Router.route('/stores/:_id', {
   name: 'stores.show',
   layoutTemplate: 'layout',
 	onAfterAction: function() {
@@ -92,45 +116,41 @@ Router.route('/tiendas/:_id', {
 	}
 });
 
-Router.route('/disenadores', {
+Router.route('/designers', {
   name: 'designers.index',
   layoutTemplate: 'layout',
 	onAfterAction: onAfterAction('Diseñadores')
 });
 
-Router.route('/posts/:_id', {
-  name: 'posts.show',
-  layoutTemplate: 'layout',
-	onAfterAction: onAfterAction()
-});
+
 
 /**
  * Ads
  */
-Router.route('ads/:_id', function() {
-  var ad = Ads.findOne(this.params._id);
+// Router.route('ads/:_id', function() {
+//   var ad = Ads.findOne(this.params._id);
 
-  if (!ad.url) {
-    this.response.end('Error');
-    return;
-  }
+//   if (!ad.url) {
+//     this.response.end('Error');
+//     return;
+//   }
 
-  Ads.update(ad._id, { $inc: { clicks: 1 } });
+//   Ads.update(ad._id, { $inc: { clicks: 1 } });
 
-  var adUrl = UrlUtils.parse(ad.url, true);
+//   var adUrl = UrlUtils.parse(ad.url, true);
 
-  var query = {
-    utm_source: 'Decomarias.cl',
-    utm_medium: 'banner',
-    utm_content: ad._id,
-    utm_campaign: ad.location
-  }
+//   var query = {
+//     utm_source: 'Decomarias.cl',
+//     utm_medium: 'banner',
+//     utm_content: ad._id,
+//     utm_campaign: ad.location
+//   }
 
-  adUrl.query = _.extend(query, adUrl.query);
-  adUrl.search = null;
-  //this.response.end(UrlUtils.format(adUrl));
-  this.response.end('<script>window.location.replace("' + UrlUtils.format(adUrl) + '");</script>')
-}, { where: 'server', name: 'ad.url' });
+//   adUrl.query = _.extend(query, adUrl.query);
+//   adUrl.search = null;
+//   //this.response.end(UrlUtils.format(adUrl));
+//   this.response.end('<script>window.location.replace("' + UrlUtils.format(adUrl) + '");</script>')
+// }, { where: 'server', name: 'ad.url' });
 
 
 /**

@@ -1,0 +1,27 @@
+<template name="carouselSection">
+    <section class="manufacturers bylers-orange-bkg">
+      <div class="container">
+        <h3 class="center-align marias-green-text site-text-shadow">
+          Quality Products From Respected Manufacturers
+        </h3>
+        <br>
+        {{> carousel }}
+      </div>
+    </section>
+</template>
+
+<template name="carousel">
+    <div id="owl-example" class="owl-carousel">
+        {{#each manufacturerItem}}
+          <div><a href="{{ website }}" target="_BLANK"><img src="{{ image.url }}" width="170px" /> </a></div>
+        {{/each}}
+    </div>
+    <style type="text/css">
+    	@media (max-width: 600px) {
+		  .owl-item a img {
+		  	width: 99px;
+			height: 59px;
+		   }
+		}
+    </style>
+</template>

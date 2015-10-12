@@ -6,9 +6,9 @@ orion.pages.addTemplate({
 }, {
   position: {
     type: Number,
-    label: 'Posición'
+    label: 'Position'
   },
   content: orion.attribute('froala', {
-    label: 'Contenido'
+    label: 'Content'
   })
 })

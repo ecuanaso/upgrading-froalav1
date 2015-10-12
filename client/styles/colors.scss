@@ -1,8 +1,28 @@
-$marias-green: #c7e5d3;
-$marias-grey: #6f7073;
+$marias-green: #731f1d;
+$marias-grey: #fff;
+$bylers-orange:#f99c1c;
 
-.marias-green {
-  background-color: $marias-green;
+.froala-view h1, h1.fr-tag,
+.froala-view h3, h3.fr-tag {
+    color: $marias-green !important;
+}
+
+.froala-view h2, h2.fr-tag {
+    color: $bylers-orange !important;
+}
+
+.bylers-orange-bkg {
+  background-color: $bylers-orange;
+}
+
+.bylers-orange-text {
+  color: $bylers-orange !important;
+}
+
+.marias-green,
+.margias-green:hover,
+.marias-green a:hover {
+  background-color: $marias-green!important;
 }
 
 .marias-green-text {
@@ -38,7 +58,7 @@ $marias-grey: #6f7073;
 
 .marias-green-with-text-darken {
   background-color: $marias-green !important;
-  color: darken($marias-grey, 20%) !important;
+  color: darken($marias-grey, 50%) !important;
   * {
     color: darken($marias-grey, 20%) !important;
   }

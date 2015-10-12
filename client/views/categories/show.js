@@ -38,7 +38,7 @@ Template.categoriesShow.onRendered(function() {
     var current = Router.current();
     Tracker.afterFlush(function() {
       $('.parallax').parallax();
-      $('.dropdown-button').dropdown({ constrain_width: false, hover: true });
+      $('.dropdown-button').dropdown({ constrain_width: false, hover: false, belowOrigin: true });
       $('select:not(.initialized)').material_select();
     })
   })
@@ -51,7 +51,7 @@ Template.categoriesShow.onRendered(function() {
     var id = Router.current().params.type || '';
     Products.find({ category: id }, { sort: getSort() }).count();
     Tracker.afterFlush(function () {
-      $('.dropdown-button').dropdown({ constrain_width: false, hover: true });
+      $('.dropdown-button').dropdown({ constrain_width: false, hover: false, belowOrigin: true });
       var msnry = new Masonry(container, { itemSelector: '.col' });
       $('img[data-original]').lazyload({
         effect: 'fadeIn',
@@ -74,7 +74,7 @@ Template.categoriesShow.helpers({
   },
   currentCategory: function() {
     var current = _.findWhere(topCategories, { value: Router.current().params.value });
-    current.image = orion.dictionary.get('images.' + current.value);
+    current.image = orion.dictionary.get('parallax.' + current.value);
     return current;
   },
   types: function() {

@@ -1,12 +1,37 @@
 <template name="home">
-  <br>
   <div class="home">
-    <div class="row">
+    {{> rotatingBanner }}
+    <section class="bylers-orange-bkg">
+      <br>
+      <h3 class="center-align">
+        <a href="{{ dict 'home page.middleHeadlineLink' }}" class="middleHeadline marias-green-text">
+          {{ dict 'home page.middleHeadline' }}
+        </a>
+      </h3>
+      
+      <div class="container">
+        <div class="row wow fadeIn">
+          <div class="col l5 s12 m12 wow fadeIn">
+            <p class="flow-text">
+            {{{ dict 'home page.left content' }}}
+            </p>
+          </div>
+     
+          <div class="col offset-l2 l5 s12 m12 wow fadeIn">
+            <p class="flow-text">
+            {{{ dict 'home page.right content' }}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <div class="row">
       <div class="col s12 m10 offset-m1">
+        
         {{> ads location="home-top" }}
       </div>
-    </div>
-    <div class="marias-green-with-text-darken home-links">
+    </div> -->
+    <!-- <div class="marias-green-with-text-darken home-links">
       <ul>
         {{# each topCategories }}
           <li>
@@ -21,15 +46,19 @@
           </a>
         </li>
       </ul>
-    </div>
+    </div> -->
+
+   {{> promotionTableSection }}
     <br>
+   {{> carouselSection }}
+
     <div class="row">
       <div class="col s12 m9">
-        {{> homePosts }}
+        <!-- {{> homePosts }} -->
       </div>
       <div class="col s12 m3">
-        {{> ads location="home-right" }}
-        {{> ads location="home-right-2" }}
+        <!-- {{> ads location="home-right" }}
+        {{> ads location="home-right-2" }} -->
       </div>
     </div>
   </div>

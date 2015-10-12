@@ -1,9 +1,40 @@
 <template name="header">
+  <div class="logo-container site-color">
+    <div class="row">
+      <br>
+      <div class="col l2 offset-l1 hide-on-med-and-down">
+        <a href="{{ pathFor 'home' }}" class="bylers-logo">
+            <img src="{{ dict 'home page.logo.url' '#' }}" alt="Byler's Logo">
+        </a>
+      </div>
+      <div class="col l3 offset-l1 s12">
+        <p class="flow-text">
+          {{ dict 'home page.topHeadline' 'No headline'}} <br>
+          {{ dict 'home page.hop1' 'No hop1' }}<br>
+          {{ dict 'home page.hop2' 'No hop2' }}<br>
+          {{ dict 'home page.hop3' 'No hop3' }}
+        </p>
+      </div>
+      <div class="col l4 offset-l1 s12">
+        <!-- {{> socialIcons }} -->
+        <p class="flow-text">
+          {{ dict 'home page.address' 'No Address' }} <br>
+          {{ dict 'home page.city' 'No City' }}, 
+          {{ dict 'home page.state' 'No State' }}
+          {{ dict 'home page.zipcode' 'No Zipcode' }} 
+          <a class="site-blue-color" href="tel:{{ dict 'home page.phone' }}">
+            <h3><i class="fa fa-mobile"></i> {{ dict 'home page.phone' 'No Phone number' }}</h3>
+          </a>
+                 
+        </p>
+      </div>
+    </div>
+  </div>
   <nav class="header marias-green-with-text">
     <div class="nav-wrapper container">
-      <a href="{{ pathFor 'home' }}" class="brand-logo">
-        <img src="{{ dict 'brand.logo.url' }}">
-      </a>
+      <!-- <a href="{{ pathFor 'home' }}" class="brand-logo">
+        <img src="{{ dict 'home page.logo.url' }}">
+      </a> -->
       <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="side-nav" id="mobile-nav">
         {{> headerItems }}

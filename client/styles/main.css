@@ -1,0 +1,22 @@
+.front-display-header {
+    background:url(images/Layer-7.jpg)no-repeat;
+    background-size: cover;
+}
+
+/* yellow higlight on the bottom */
+.tabs .indicator {
+  height: 4px;
+}
+
+/* remove arrow icon on the select input for pages*/
+.input-field > .caret {
+  display: none;
+}
+
+.materialize-content-container .input-field label {
+    top: -0.2rem;
+}
+
+#orionPagesUpdateForm .input-field > .select-wrapper + label {
+    top: -0.2rem!important;
+}

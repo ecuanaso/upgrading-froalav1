@@ -5,27 +5,32 @@
         <img src="{{ currentCategory.image.url }}">
       </div>
     </div>
+
     {{# if shouldShowTabs }}
     <div class="marias-green-with-text home-links tabs-container">
       <ul>
         {{# each subcategories }}
+
           <li>
             <a href="#" class="dropdown-button uppercase separated {{ isSubcategoryActive }}"  data-activates="dropdown-{{ getIdForSubcategory }}">
               {{ this }}
             </a>
-            <ul id='dropdown-{{ getIdForSubcategory }}' class="dropdown-content">
+            <ul id='dropdown-{{ getIdForSubcategory }}' class="dropdown-content marias-green">
               {{# each types }}
                 <li><a href="{{ pathFor 'categories.show' type=_id value=getCategoryValue }}">{{ type }}</a></li>
               {{/ each }}
             </ul>
           </li>
+
         {{/ each }}
       </ul>
     </div>
     {{/ if }}
+
     <br>
     {{# if getCurrentType }}
-      <div class="row" style="margin-bottom: 0">
+      <div class="row" style="margin-bottom: 0px">
+
         <div class="col s12 l4">
           <p>
             {{# with getCurrentType }}
@@ -33,6 +38,7 @@
             {{/ with }}
           </p>
         </div>
+
         <div class="col s12 l4 offset-l4 input-field">
           <select class="order-select">
             <option value="populares">Mas populares</option>
@@ -43,7 +49,9 @@
           </select>
           <label>Ordenar por:</label>
         </div>
+
       </div>
+      
       <div class="section">
         <div class="">
           <div class="row" style="margin-bottom: 0">
@@ -71,7 +79,7 @@
                         {{/ if }}
                       </div>
                       <div class="card-action">
-                        <a href="{{ pathFor 'products.show' }}" class="marias-green-text-darken">Mas Información</a>
+                        <a href="{{ pathFor 'products.show' }}" class="marias-green-text-darken">View Details</a>
                       </div>
                     </div>
                   </a>
@@ -97,7 +105,7 @@
                         {{/ if }}
                       </div>
                       <div class="card-action">
-                        <a href="{{ pathFor 'products.show' }}" class="marias-green-text-darken">Mas Información</a>
+                        <a href="{{ pathFor 'products.show' }}" class="marias-green-text-darken">View Details</a>
                       </div>
                     </div>
                   </a>
@@ -111,11 +119,14 @@
       </div>
     {{ else }}
       <p class="center grey-text">
-        Selecciona una sub-categoría en la barra superior
+        <i class="fa fa-arrow-up"></i> Select a sub category
       </p>
       <div class="masonry">
 
       </div>
     {{/ if }}
   </div>
+
+  {{> carouselSection }}
+
 </template>

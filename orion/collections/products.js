@@ -1,7 +1,7 @@
 Products.attachSchema(new SimpleSchema({
   hidden: {
     type: Boolean,
-    label: 'Escondido',
+    label: 'Hidden',
     optional: true,
     autoform: {
       omit: true
@@ -9,9 +9,9 @@ Products.attachSchema(new SimpleSchema({
   },
   name: {
     type: String,
-    label: 'Nombre'
+    label: 'Name'
   },
-  category: orion.attribute('hasMany', { label: 'Categoría' }, {
+  category: orion.attribute('hasMany', { label: 'Category' }, {
     collection: Categories,
     publicationName: 'productsPosts',
     titleField: 'type',
@@ -34,7 +34,7 @@ Products.attachSchema(new SimpleSchema({
     },
   }),
   storeId: orion.attribute('hasOne', {
-    label: 'Tienda',
+    label: 'Brand',
     autoValue: function() {
       if (Roles.userHasRole(this.userId, 'store-owner')) {
         return Stores.findOne({ owner: this.userId })._id;
@@ -50,40 +50,40 @@ Products.attachSchema(new SimpleSchema({
     additionalFields: ['owner']
   }),
   image: orion.attribute('image', {
-    label: 'Imagen Principal'
+    label: 'Primary Image'
   }),
   image1: orion.attribute('image', {
-    label: 'Imagen Secundaria 1',
+    label: 'Secondary Image 1',
     optional: true
   }),
   image2: orion.attribute('image', {
-    label: 'Imagen Secundaria 2',
+    label: 'Secondary Image 2',
     optional: true
   }),
   image3: orion.attribute('image', {
-    label: 'Imagen Secundaria 3',
+    label: 'Secondary Image 3',
     optional: true
   }),
   image4: orion.attribute('image', {
-    label: 'Imagen Secundaria 4',
+    label: 'Secondary Image 4',
     optional: true
   }),
   description: {
     type: String,
-    label: 'Descripción'
+    label: 'Description'
   },
   price: {
     type: Number,
-    label: 'Precio (solo numeros)',
+    label: 'Price (Only Numbers)',
     optional: true
   },
   dimensions: {
     type: String,
-    label: 'Dimensiones'
+    label: 'Dimensions'
   },
   material: {
     type: String,
-    label: 'Materialidad'
+    label: 'Material'
   },
   views: {
     type: Number,
@@ -96,7 +96,7 @@ Products.attachSchema(new SimpleSchema({
     min: 1,
     max: 100,
     optional: true,
-    label: 'Descuento',
+    label: 'Discount',
     autoform: {
       omit: true
     }

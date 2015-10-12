@@ -1,17 +1,21 @@
 Categories.attachSchema(new SimpleSchema({
   category: {
     type: String,
-    label: 'Categoría',
+    label: 'Category',
     allowedValues: _.pluck(topCategories, 'label')
   },
   subcategory: {
     type: String,
-    label: 'Sub-categoría'
+    label: 'Sub-category'
   },
   type: {
     type: String,
-    label: 'Tipo'
-  }
+    label: 'Type'
+  },
+
+  content: orion.attribute('froala', {
+      label: 'Content'
+    })
 }));
 
 Categories.helpers({

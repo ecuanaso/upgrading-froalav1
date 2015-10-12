@@ -1,0 +1,31 @@
+<template name="promotionTableSection">
+  <section>
+      <div class="container">
+        <div class="row">
+          {{#each topCategories}}
+            {{> promotionTable}}
+          {{/each}}
+        </div>
+      </div>
+    </section>
+</template>
+
+<template name="promotionTable">
+  <div class="col s12 m6 l3 m4 s6">
+    <a href="{{ pathFor 'categories.show' }}">
+      <div class="card wow fadeIn hoverable">
+        <div class="card-image waves-effect waves-block waves-light">
+          
+          <img src="{{ categoryImage }}" width="231" height="240">
+        </div>
+        <div class="card-content left-align">
+          
+          <a href="{{ pathFor 'categories.show' }}" class="grey-text" style="font-size:20px;">
+            <span class="grey-text">{{ label }}</span>
+          </a>
+       
+        </div>
+      </div>
+    </a>
+  </div>
+</template>
