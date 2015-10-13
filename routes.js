@@ -174,7 +174,7 @@ if (Meteor.isClient) {
   orion.links.add({
     routeName: 'admin.store.update',
     activeRouteRegex: 'admin.store',
-    title: 'Mi Tienda',
+    title: 'My Store',
     section: 'top',
     identifier: 'my-store',
     permission: 'updateMyStore'

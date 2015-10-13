@@ -63,25 +63,30 @@
     </div>
   {{/ unless }}
 </template>
+
+
 <template name="headerItems">
   <li class="{{ isActiveRoute regex='home' }}">
     <a href="{{ pathFor 'home' }}" class="uppercase separated">
       Home
     </a>
   </li>
+   {{# each pages }}
+            <li class="{{ isActivePath regex='path' }}"><a href="{{ path }}">{{ title }}</a></li>
+    {{/ each }}
   <li class="{{ isActiveRoute regex='search' }}">
     <a href="{{ pathFor 'search' }}" class="uppercase separated">
-      Buscar
+      Search
     </a>
   </li>
   <li class="{{ isActiveRoute regex='stores' }}">
     <a href="{{ pathFor 'stores.index' }}" class="uppercase separated">
-      Tiendas
+      Brands
     </a>
   </li>
   <li>
     <a href="{{ pathFor 'admin' }}" class="uppercase separated">
-      Mi Cuenta
+      My Account
     </a>
   </li>
 </template>

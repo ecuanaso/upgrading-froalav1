@@ -1,3 +1,3 @@
-Meteor.publish('designers', function () {
-  return Designers.find();
-});
+// Meteor.publish('designers', function () {
+//   return Designers.find();
+// });
