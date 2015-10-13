@@ -1,9 +1,24 @@
+/* width of account dropdown on top right */
+.dropdown-content {
+    width: 165px;
+    left: 671.902878px;
+}
+
 /* positiong value input box width adjustment */
 .order-box, 
 .order-pages, 
 .order-banner,
 .order-recipients {
     width: 1.875em !important;
+}
+
+.slider .indicators {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 17px;
+    margin: 0;
 }
 
 /*.orion-materialize-admin .materialize-buttons-container .cancenl-btn,*/

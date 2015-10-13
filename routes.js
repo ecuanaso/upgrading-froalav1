@@ -1,26 +1,3 @@
-// var onAfterAction = function(title, description, image) {
-// 	return function() {
-// 		if (!Meteor.isClient) {
-// 			return;
-// 		}
-// 		GAnalytics && GAnalytics.pageview();
-// 		SEO.set({
-// 			title: (title && (orion.dictionary.get('seo.title') + ' - ' + title)) || orion.dictionary.get('seo.title'),
-// 			link: {
-// 				icon: orion.dictionary.get('seo.favIcon.url'),
-// 			},
-// 			meta: {
-// 				description: description || orion.dictionary.get('seo.description')
-// 			},
-// 			og: {
-// 				title: title || orion.dictionary.get('seo.title'),
-// 				description: description || orion.dictionary.get('seo.description'),
-// 				image: image || orion.dictionary.get('seo.image.url')
-// 			}
-// 		});
-// 	}
-// }
-
 var onAfterAction = function(title, description, image) {
 	return function() {
 		if (!Meteor.isClient) {

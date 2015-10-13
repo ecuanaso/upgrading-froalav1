@@ -1,18 +1,18 @@
 Stores.attachSchema(new SimpleSchema({
   hidden: {
     type: Boolean,
-    label: 'Escondido'
+    label: 'Hidden'
   },
   name: {
     type: String,
-    label: 'Nombre'
+    label: 'Name'
   },
   owner: orion.attribute('user', { label: 'Dueño' }, {
     publicationName: 'storesUser'
   }),
   phone: {
     type: String,
-    label: 'Teléfono'
+    label: 'Telephone'
   },
   email: {
     type: String,
@@ -20,12 +20,12 @@ Stores.attachSchema(new SimpleSchema({
   },
   direction: {
     type: String,
-    label: 'Dirección'
+    label: 'Direction'
   },
   website: {
     type: String,
     optional: true,
-    label: 'Sitio Web'
+    label: 'Web Site'
   },
   logo: orion.attribute('image', {
     label: 'Logo'
@@ -35,6 +35,6 @@ Stores.attachSchema(new SimpleSchema({
     min: 1,
     max: 100,
     optional: true,
-    label: 'Descuento'
+    label: 'Discount'
   }
 }));
