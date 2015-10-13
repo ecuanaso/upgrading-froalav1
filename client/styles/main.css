@@ -1,8 +1,12 @@
-/*.orion-materialize-admin .btn {
-      background-color: #26a69a!important;
-}*/
+/* positiong value input box width adjustment */
+.order-box, 
+.order-pages, 
+.order-banner,
+.order-recipients {
+    width: 1.875em !important;
+}
 
-.orion-materialize-admin .materialize-buttons-container a,
+/*.orion-materialize-admin .materialize-buttons-container .cancenl-btn,*/
 .file-field .btn,
 .image-attribute .input-field {
     background-color: #26a69a!important;

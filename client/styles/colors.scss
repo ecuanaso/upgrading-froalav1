@@ -37,16 +37,16 @@ $bylers-orange:#f99c1c;
   @extend .marias-green-text;
 }
 
-.btn {
-  background-color: $marias-green;
-  color: $marias-grey;
-  &:hover {
-    background-color: darken($marias-green, 10%);
-  }
-  &.light-blue, &.red {
-    color: #fff;
-  }
-}
+// .btn {
+//   background-color: $marias-green;
+//   color: $marias-grey;
+//   &:hover {
+//     background-color: darken($marias-green, 10%);
+//   }
+//   &.light-blue, &.red {
+//     color: #fff;
+//   }
+// }
 
 .marias-green-with-text {
   background-color: $marias-green !important;

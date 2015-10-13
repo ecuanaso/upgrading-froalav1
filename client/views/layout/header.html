@@ -54,14 +54,19 @@
             </a>
           </li>
         {{/ each }}
-        <li class="{{ isActiveRoute regex='designers' }}">
+        <!-- <li class="{{ isActiveRoute regex='designers' }}">
            <a href="{{ pathFor 'designers.index' }}" class="uppercase separated">
             {{ dict 'texts.tituloDecoradores' 'Diseñadores' }}
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
   {{/ unless }}
+  <style type="text/css">
+    ul li.active a {
+      color: #fff!important;
+    }
+  </style>
 </template>
 
 
