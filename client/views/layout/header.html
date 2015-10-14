@@ -86,7 +86,7 @@
     </a>
   </li>
    {{# each pages }}
-            <li class="{{ isActivePath regex='path' }}"><a href="{{ path }}">{{ title }}</a></li>
+            <li class="{{ isActivePath regex='path' }}"><a href="{{ path }}" class="uppercase separated">{{ title }}</a></li>
     {{/ each }}
   <li class="{{ isActiveRoute regex='search' }}">
     <a href="{{ pathFor 'search' }}" class="uppercase separated">
@@ -98,6 +98,7 @@
       Brands
     </a>
   </li>
+  <li class="{{ isActiveRoute 'contact' }} waves-effect waves-light"><a href="{{pathFor 'contact'}}" class="uppercase separated">Contact</a></li>
   <li>
     <a href="{{ pathFor 'admin' }}" class="uppercase separated">
       My Account

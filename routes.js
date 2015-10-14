@@ -34,6 +34,12 @@ Router.route('/search', {
 	onAfterAction: onAfterAction('Buscar')
 });
 
+Router.route('/contact', {
+  name: 'contact',
+  layoutTemplate: 'layout',
+  onAfterAction: onAfterAction('Contact')
+});
+
 Router.route('/products/:_id', {
   name: 'products.show',
   layoutTemplate: 'layout',

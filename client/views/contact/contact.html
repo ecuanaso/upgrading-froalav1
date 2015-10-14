@@ -1,0 +1,68 @@
+<template name="contact">
+	<!-- <div class="parallax-container">
+      <div class="parallax"><h2 class="center-align site-blue-color site-text-shadow">
+				  		{{ dict 'contact.title' }}
+				  	</h2><img src="images/108286.jpg"></div>
+    </div> -->
+	<div class="padding-left-right">
+		<h2 class="center-align uppercase">
+			{{ dict 'contact.title' }}
+		</h2>
+		<br>
+		<div class="row">
+			<div class="col s12 l5">
+				<div class="card-panel white hoverable">
+		          {{# autoForm schema='ContactSchema' id="contactForm" type="normal" }}
+
+				  	<!-- <h4 class="center-align site-blue-color site-text-shadow">
+				  		{{ dict 'contact.title' }}
+				  	</h4> -->
+				  	<div class="padding"></div> 
+	                  <!-- {{> afQuickField name="categoryId"}} -->
+	                  {{> afQuickField name="name"}}                      
+	                  {{> afQuickField name="email" }}
+	                  {{> afQuickField name="title" }}
+	                  {{> afQuickField name="message" rows=8 }}
+	                  {{> reCAPTCHA }}
+
+	                  {{#if getCaptchaErrors }}
+	                    <p class="red-text text-darken-2">Please check the captcha!</p>
+	                  {{/if}}
+	                 <br>
+		            <button class="btn waves-effect waves-light center-block marias-green send-col" type="submit" style="background-color: #000246;">
+		            	Submit <i class="material-icons right">send</i>
+		            </button>
+		            <div class="padding"></div>  
+	              {{/ autoForm }} 
+		        </div>
+			</div>
+
+			<div class="col s12 l5 offset-l2">
+
+				
+				
+				<p class="flow-text">
+					{{{ dict 'contact.text' }}}
+					
+					<!-- Email us at: <br>
+					<a class="site-blue-color" href="mailto:{{ dict 'contact.email' }}">
+						{{ dict 'contact.email' }}
+					</a> -->
+				</p>
+				
+			</div>
+		</div>
+	</div>
+	<style type="text/css">
+
+		/*button.btn:hover,
+		button.btn.active, .send-col.active {
+			background-color: #000246;
+		}*/
+
+		button.btn {
+		  	width: 250px;
+		  }
+		
+	</style>
+</template>
