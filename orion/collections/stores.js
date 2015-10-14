@@ -7,9 +7,9 @@ Stores.attachSchema(new SimpleSchema({
     type: String,
     label: 'Name'
   },
-  owner: orion.attribute('user', { label: 'Dueño' }, {
-    publicationName: 'storesUser'
-  }),
+  // owner: orion.attribute('user', { label: 'Dueño' }, {
+  //   publicationName: 'storesUser'
+  // }),
   phone: {
     type: String,
     label: 'Telephone'
@@ -30,11 +30,11 @@ Stores.attachSchema(new SimpleSchema({
   logo: orion.attribute('image', {
     label: 'Logo'
   }),
-  discount: {
-    type: Number,
-    min: 1,
-    max: 100,
-    optional: true,
-    label: 'Discount'
-  }
+  // discount: {
+  //   type: Number,
+  //   min: 1,
+  //   max: 100,
+  //   optional: true,
+  //   label: 'Discount'
+  // }
 }));

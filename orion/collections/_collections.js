@@ -1,3 +1,41 @@
+RotatingBanner = new orion.collection('rotatingbanner', {
+  singularName: 'Banner',
+  pluralName: 'Banners',
+  title: 'Rotating Banner',
+  link: {
+    title: 'Rotating Banner',
+    parent: 'slideshows'
+  },
+  tabular: {
+    columns: [
+      { data: 'title', title: 'Title' },
+      orion.attributeColumn('image', 'image', 'Image (size: 1300x500)'),
+      { data: 'position', title: 'Order', 
+        render: function(val,type,doc){
+        return '<input data-id="' + doc._id + '" type="number" value="' + val + '" class="order-banner">'
+        }
+      },
+
+      { data: 'visibility',className: 'center-align', orderable: false, title: 'Visibility', 
+        render: function(val, type, doc) {
+          var html = '<div class="switch switch-rotating-banner"><label>Off<input type="checkbox" data-id="' + doc._id + '"';
+          html +=  (val) ? ' checked="checked"' : ''; 
+          html +='><span class="lever"></span>On</label></div>'
+          return html;
+        }
+
+      },
+
+      { data: 'actions',className: 'center-align',orderable: false, title: 'Actions',
+          render: function (val,type,doc){
+            return '<a href="' + Router.path('collections.rotatingbanner.update', doc) +'" class="btn btn-xs waves-effect waves-light light-blue accent-4 user-btn-action">Edit</a>'
+          },
+          tmpl: Meteor.isClient && Template.actionBtns
+     }
+    ]
+  }
+});
+
 Categories = new orion.collection('categories', {
   singularName: 'Category',
   pluralName: 'Categories',
@@ -52,9 +90,9 @@ Stores = new orion.collection('stores', {
   tabular: {
     columns: [
       { data: 'name', title: 'Name' },
-      orion.attributeColumn('user', 'owner', 'Owner'),
+      //orion.attributeColumn('user', 'owner', 'Owner'),
       {
-        title: 'Exportar Visitas',
+        title: 'Export Visits',
         tmpl: Meteor.isClient && Template.adminExportVisits
       },
       { data: 'actions',className: 'center-align',orderable: false, title: 'Actions',
@@ -68,12 +106,12 @@ Stores = new orion.collection('stores', {
 });
 
 Projects = new orion.collection('projects', {
-  singularName: 'Proyecto',
-  pluralName: 'Proyectos',
-  title: 'Proyectos',
-  link: {
-    title: 'Proyectos'
-  },
+  singularName: 'Proyects',
+  pluralName: 'Proyects',
+  title: 'Proyects',
+  //link: {
+    //title: 'Proyects'
+  //},
   tabular: {
     columns: [
       { data: 'name', title: 'Name' },

@@ -1,19 +1,22 @@
 <template name="layout">
+<!--   {{#if Template.subscriptionsReady}} -->
+
   {{# if dictionaryReady }}
-  <header class="header front-display-header">
-    {{> header }}
-  </header>
-  <main>
-    {{# if dictionaryReady }}
-      {{> yield }}
-    {{/ if }}
-  </main>
-  <footer class="page-footer marias-green-with-text">
-    {{> footer }}
-  </footer>
+    <header class="header front-display-header">
+      {{> header }}
+    </header>
+    <main>
+      {{# if dictionaryReady }}
+        {{> yield }}
+      {{/ if }}
+    </main>
+    <footer class="page-footer marias-green-with-text">
+      {{> footer }}
+    </footer>
   {{ else }}
     {{> loading }}
   {{/ if }}
+<!--   {{/ if }} -->
   <style>
     html {
       font-family: 'Oswald', sans-serif;

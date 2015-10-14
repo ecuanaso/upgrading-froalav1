@@ -72,11 +72,11 @@ Products.attachSchema(new SimpleSchema({
     type: String,
     label: 'Description'
   },
-  price: {
-    type: Number,
-    label: 'Price (Only Numbers)',
-    optional: true
-  },
+  // price: {
+  //   type: Number,
+  //   label: 'Price (Only Numbers)',
+  //   optional: true
+  // },
   dimensions: {
     type: String,
     label: 'Dimensions'

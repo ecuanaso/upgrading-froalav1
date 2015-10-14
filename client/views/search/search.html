@@ -6,7 +6,7 @@
         <div class="input-field hoverable">
           {{> esInput index="products" type="search" }}
           <label for="search"><i class="mdi-action-search black-text"></i></label>
-          <i class="mdi-navigation-close black-text"></i>
+          <i class="mdi-navigation-close"></i>
         </div>
       </div>
     </nav>
@@ -15,7 +15,7 @@
   {{# ifEsHasNoResults index="products" }}
     <div class="center">
       <br>
-      <p>
+      <p style='text-transform:uppercase;'>
         No Products Found
       </p>
     </div>

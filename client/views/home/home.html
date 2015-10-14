@@ -1,6 +1,8 @@
 <template name="home">
   <div class="home">
-    {{> rotatingBanner }}
+    {{# if Template.subscriptionsReady }}
+        {{> rotatingBanner }}
+    {{/if}}
     <section class="bylers-orange-bkg">
       <br>
       <h3 class="center-align">
