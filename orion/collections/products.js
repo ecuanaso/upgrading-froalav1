@@ -88,7 +88,10 @@ Products.attachSchema(new SimpleSchema({
   views: {
     type: Number,
     label: 'Views',
-    defaultValue: 0
+    defaultValue: 0,
+    autoform: {
+      omit: true
+    }
   },
   createdAt: orion.attribute('createdAt'),
   discount: {

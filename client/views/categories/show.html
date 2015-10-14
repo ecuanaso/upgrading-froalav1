@@ -41,30 +41,33 @@
 
         <div class="col s12 l4 offset-l4 input-field">
           <select class="order-select">
-            <option value="populares">Mas populares</option>
-            <option value="menor-a-mayor-precio">Precio de menor a mayor</option>
-            <option value="mayor-a-menor-precio">Precio de mayor a menor</option>
-            <option value="nuevos">Nuevos</option>
-            <option value="antiguos">Antiguos</option>
+            <option value="populares">More popular</option>
+            <option value="menor-a-mayor-precio">Highest Price Products</option>
+            <option value="mayor-a-menor-precio">Lowest Price Products</option>
+            <option value="nuevos">Newest Products</option>
+            <option value="antiguos">Oldest Products</option>
           </select>
-          <label>Ordenar por:</label>
+          <label>Order By:</label>
         </div>
 
       </div>
       
       <div class="section">
-        <div class="">
+        <div class="container">
           <div class="row" style="margin-bottom: 0">
             <div class="col s12 m6 l3 example-width"></div>
           </div>
           <div class="row masonry">
             {{# if Template.subscriptionsReady }}
               {{# each productsWithPrice }}
-                <div class="col s12 m6 l3">
+                <div class="col s12 m6 l4">
                   <a href="{{ pathFor 'products.show' }}">
                     <div class="card">
-                      <div class="card-image waves-effect waves-block waves-light" style="height: {{ getImageHeight }}px; background-color: {{ image.info.backgroundColor }}">
+                      <!-- <div class="card-image waves-effect waves-block waves-light" style="height: {{ getImageHeight }}px; background-color: {{ image.info.backgroundColor }}">
                         <img data-original="{{ image.url }}">
+                      </div> -->
+                      <div class="card-image waves-effect waves-block waves-light" style="background-color: {{ image.info.backgroundColor }}">
+                        <img data-original="{{ image.url }}" width="200" height="300">
                       </div>
                       <div class="card-content">
                         <span class="card-title grey-text text-darken-4">{{ name }}</span>

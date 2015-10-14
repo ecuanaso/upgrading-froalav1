@@ -28,7 +28,7 @@
   <div class="container wow fadeIn">
     <div class="row">
       <div class="col l6 s12 m6">
-        <h5 class="white-text">Byler's Stove Shoppe</h5>
+        <h5 class="white-text">{{ dict 'home page.footerTitle' 'No Title' }}</h5>
         <p class="flow-text grey-text text-lighten-4"> 
           {{ dict 'home page.address' 'No Address' }} <br>
           {{ dict 'home page.city' 'No City' }}, 
@@ -46,10 +46,21 @@
 
   <div class="footer-copyright">
     <div class="container">
-    {{ dict 'home page.copyright' 'No Copyright Info' }}
-    <a class="right" href="#!" target="_BLANK">
-      <img src="../images/WebDesign-C1to1-H.png" alt="Web Design">
-    </a>
+      <span> 
+        {{ dict 'home page.copyright' 'No Copyright Info' }}
+      </span>
+      <a class="right" href="#!" target="_BLANK">
+        <img src="/images/WebDesign-C1to1-H.png" alt="Web Design">
+      </a>
     </div>
   </div>
+  <style>
+    .footer-copyright {
+      background-color:#ccc!important;
+    }
+    .footer-copyright span {
+      color:#000!important;
+      font-weight: 300;
+    }
+  </style>
 </template>

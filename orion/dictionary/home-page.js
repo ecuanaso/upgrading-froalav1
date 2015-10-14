@@ -121,7 +121,12 @@ orion.dictionary.addDefinition('favIcon', 'home page',
   orion.attribute('image')
 );
 
+orion.dictionary.addDefinition('footerTitle', 'home page', {
+	type: String,
+	label: 'Title (Footer)'
+});
+
 orion.dictionary.addDefinition('copyright', 'home page', {
 	type: String,
-	label: 'Copyright info'
+	label: 'Copyright Info (Footer)'
 });
