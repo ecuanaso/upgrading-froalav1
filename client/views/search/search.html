@@ -1,12 +1,12 @@
 <template name="search">
   <div class="container">
     <h1 class="page-title">Search</h1>
-    <nav>
-      <div class="nav-wrapper marias-green">
-        <div class="input-field">
+    <nav class="white">
+      <div class="nav-wrapper">
+        <div class="input-field hoverable">
           {{> esInput index="products" type="search" }}
-          <label for="search"><i class="mdi-action-search"></i></label>
-          <i class="mdi-navigation-close"></i>
+          <label for="search"><i class="mdi-action-search black-text"></i></label>
+          <i class="mdi-navigation-close black-text"></i>
         </div>
       </div>
     </nav>
@@ -16,7 +16,7 @@
     <div class="center">
       <br>
       <p>
-        No se encontraron productos
+        No Products Found
       </p>
     </div>
   {{/ ifEsHasNoResults}}
