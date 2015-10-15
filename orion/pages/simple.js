@@ -24,6 +24,15 @@ orion.pages.addTemplate({
     label: 'Position'
   },
 
+  boxId: orion.attribute('hasMany', {
+    label: 'Select Boxes',
+    optional: true
+  }, {
+    collection: Boxes,
+    titleField: 'title',
+    publicationName: 'pagesBoxes'
+  }),
+
   metatitle: {
     type: String,
     label: 'Meta title',
@@ -68,4 +77,4 @@ orion.pages.addTemplate({
       label: 'Visible inside footer?',
       defaultValue: true
     }
-})
+});

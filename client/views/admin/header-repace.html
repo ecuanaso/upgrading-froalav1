@@ -1,0 +1,54 @@
+<template name="adminHeaderReplace">
+    {{# with getAdminLink 'myAccount' }}
+    <ul id="navbar-user-dropdown" class="dropdown-content">
+      <li>
+        <span class="grey-text text-darken-1">
+          {{ title }}
+        </span>
+      </li>
+      {{# each childs }}
+        <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+          <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
+        </li>
+      {{/ each }}
+      <li class="divider"></li>
+      <li><a href="#" class="grey-text text-darken-4 logout">{{ i18n 'global.logout' }}</a></li>
+    </ul>
+  {{/ with }}
+  <div class="{{ options 'materialize.headerColor' 'blue' }} header-container">
+    <nav class="{{ options 'materialize.headerColor' 'blue' }}">
+      <div class="nav-wrapper">
+        <ul class="left">
+          <li>
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+              <i class="mdi-navigation-menu"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="right">
+          <li>
+             <a href="{{ options 'homePath' '/' }}">
+               <i class="mdi-action-home"><span class="text-position">Home</span></i>
+             </a>
+          </li>
+          <li>
+            <a class="dropdown-button user-links-activator" href="#" data-activates="navbar-user-dropdown">
+              <i class="mdi-social-person"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h4>
+      {{> yield }}
+    </h4>
+  </div>
+  <style type="text/css">
+    .text-position {
+      font-size: 1.1rem;
+      position: relative;
+      bottom: 2px;
+    }
+
+  </style>
+</template>

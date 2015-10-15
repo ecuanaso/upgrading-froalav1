@@ -1,15 +1,15 @@
 ContactSchema = new SimpleSchema({
-  // categoryId: {
-  //   type: String,
-  //   label: "Recipients",
-  //   autoform: {
-  //     options: function() {
-  //       return Recipients.find({}, {sort: { position: 1 }}).map(function(rec) { 
-  //             return { label: rec.name, value: rec.email }; 
-  //           });
-  //     }
-  //    }
-  // },
+  categoryId: {
+    type: String,
+    label: "Recipients",
+    autoform: {
+      options: function() {
+        return Recipients.find({}, {sort: { position: 1 }}).map(function(rec) { 
+              return { label: rec.name, value: rec.email }; 
+            });
+      }
+     }
+  },
   title: {
     type: String,
     label: "Subject",

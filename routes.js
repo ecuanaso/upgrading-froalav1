@@ -5,17 +5,17 @@ var onAfterAction = function(title, description, image) {
 		}
 		GAnalytics && GAnalytics.pageview();
 		SEO.set({
-			title: (title && (orion.dictionary.get('home page.title') + ' - ' + title)) || orion.dictionary.get('home page.title'),
+			title: (title && (orion.dictionary.get('home.title') + ' - ' + title)) || orion.dictionary.get('home.title'),
 			link: {
-				icon: orion.dictionary.get('home page.favIcon.url'),
+				icon: orion.dictionary.get('home.favIcon.url'),
 			},
 			meta: {
-				description: description || orion.dictionary.get('home page.description')
+				description: description || orion.dictionary.get('home.description')
 			},
 			og: {
-				title: title || orion.dictionary.get('home page.title'),
-				description: description || orion.dictionary.get('home page.description'),
-				image: image || orion.dictionary.get('home page.image.url')
+				title: title || orion.dictionary.get('home.title'),
+				description: description || orion.dictionary.get('home.description'),
+				image: image || orion.dictionary.get('home.image.url')
 			}
 		});
 	}
@@ -152,6 +152,58 @@ Router.route('/admin/store', {
     return Meteor.subscribe('myStore');
   }
 });
+
+// Router.route('/:slug', function() {
+//     var subs = Meteor.subscribe('page', this.params.slug);
+//     this.wait(subs);
+//     if (subs.ready()) {
+//       var page = orion.pages.collection.findOne({ url: this.params.slug });
+//       if (page) {
+//         var template = orion.pages.templates[page.template];
+//         if (template.layout) {
+//           this.layout(template.layout);
+//         }
+//         this.render(page.template, {data: page});
+//       } else {
+//         this.render('notFound');
+//       }
+//     }
+//   }, { name: 'newPages',
+//        layoutTemplate: 'layout',
+//         data: function(){
+//           var page;
+//           page = orion.pages.collection.findOne({ url: this.params.slug }); 
+//           return {
+//             page: page
+//           }
+//         },
+
+//         onAfterAction: function(metatitle, metadescription, metakeywords){
+//           // The SEO object is only available on the client.
+//           // Return if you define your routes on the server, too.
+//           if (!Meteor.isClient) {
+//             return;
+//           }
+
+//           var page = orion.pages.collection.findOne({ url: this.params.slug });
+//           SEO.set({
+//             title: page.metatitle,
+//             link: {
+//                icon: orion.dictionary.get('home.favIcon.url'),
+//             },
+//             meta: {
+//               description: page.metadescription,
+//               keywords : page.metakeywords
+//             },
+
+//             og: {
+//               title: page.metatitle,
+//               description: page.metadescription
+//             }
+//           });
+
+//       }
+//  });
 
 if (Meteor.isClient) {
   orion.links.add({

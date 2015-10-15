@@ -1,3 +1,31 @@
+Recipients = new orion.collection('recipient', {
+  singularName: 'recipient', // The name of one of this items
+  pluralName: 'recipients', // The name of more than one of this items
+  title:'Recipient', // The title of the page
+  link: {
+    title: 'Recipients', index: 75
+    
+  },
+  tabular: {
+    columns: [
+      { data: 'name', title: 'Contact Name' },
+      { data: 'email', title: 'Email' },
+      { data: 'position', title: 'Order', 
+        render: function(val,type,doc){
+        return '<input data-id="' + doc._id + '" type="number" value="' + val +'" class="order-recipients">'
+        }
+      },
+      { data: 'actions',className: 'center-align',orderable: false, title: 'Actions',
+        render: function (val,type,doc){
+          return '<a href="' + Router.path('collections.recipient.update', doc) +'" class="btn btn-xs waves-effect waves-light light-blue accent-4 user-btn-action">Edit</a>'
+        },
+        tmpl: Meteor.isClient && Template.actionBtns
+     }
+    ]
+  }
+});
+
+
 RotatingBanner = new orion.collection('rotatingbanner', {
   singularName: 'Banner',
   pluralName: 'Banners',
@@ -36,12 +64,41 @@ RotatingBanner = new orion.collection('rotatingbanner', {
   }
 });
 
+Boxes = new orion.collection('boxes', {
+  singularName: 'Box',
+  pluralName: 'Boxes',
+  title: 'Boxes',
+  link: {
+    title: 'Boxes',
+    index: 35
+  },
+
+  tabular: {
+    columns: [
+      { data: 'title', title: 'Title'},
+      { data: 'position', title: 'Order',
+            render: function( val, type, doc) {
+              return '<input data-id="' + doc._id + '" type="number" value="' + val + '" class="order-box">'
+            }
+        },
+
+      { data: 'actions',className: 'center-align',orderable: false, title: 'Actions',
+          render: function (val,type,doc){
+            return '<a href="' + Router.path('collections.boxes.update', doc) +'" class="btn btn-xs waves-effect waves-light light-blue accent-4 user-btn-action">Edit</a>'
+          },
+        tmpl: Meteor.isClient && Template.actionBtns
+       }
+    ]
+  }
+});
+
 Categories = new orion.collection('categories', {
   singularName: 'Category',
   pluralName: 'Categories',
   title: 'Categories',
   link: {
-    title: 'Categories'
+    title: 'Categories',
+    index: 30
   },
   tabular: {
     columns: [
@@ -85,7 +142,8 @@ Stores = new orion.collection('stores', {
   pluralName: 'Brands',
   title: 'Brands',
   link: {
-    title: 'Brands'
+    title: 'Brands',
+    index: 20
   },
   tabular: {
     columns: [
@@ -95,6 +153,16 @@ Stores = new orion.collection('stores', {
         title: 'Export Visits',
         tmpl: Meteor.isClient && Template.adminExportVisits
       },
+      { data: 'hidden',className: 'center-align', orderable: false, title: 'Hidden', 
+        render: function(val, type, doc) {
+          var html = '<div class="switch switch-brands"><label>Off<input type="checkbox" data-id="' + doc._id + '"';
+          html +=  (val) ? ' checked="checked"' : ''; 
+          html +='><span class="lever"></span>On</label></div>'
+          return html;
+        }
+
+      },
+
       { data: 'actions',className: 'center-align',orderable: false, title: 'Actions',
         render: function (val,type,doc){
             return '<a href="' + Router.path('collections.stores.update', doc) +'" class="btn btn-xs waves-effect waves-light light-blue accent-4 user-btn-action">Edit</a>'
@@ -123,7 +191,7 @@ Favorites = new orion.collection('favorites', {
   singularName: 'Favorite',
   pluralName: 'Favorites',
   link: {
-    title: 'Favoritos'
+    title: 'Favorites'
   },
   tabular: {
     columns: [

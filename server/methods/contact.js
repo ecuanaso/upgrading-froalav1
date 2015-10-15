@@ -1,8 +1,8 @@
-// Meteor.startup(function() {
-//     reCAPTCHA.config({
-//         privatekey: '6LfTtg0TAAAAALEIHk-bkUDiRJou0kvbDJ3wdPUx'
-//     });
-// });
+Meteor.startup(function() {
+    reCAPTCHA.config({
+        privatekey: '6LeM1Q4TAAAAAHlZL0eEUa8nncUN31KQfh4Dczfd'
+    });
+});
 
 function nl2br (str, is_xhtml) {
     var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>'; // Adjust comment to avoid issue on phpjs.org display

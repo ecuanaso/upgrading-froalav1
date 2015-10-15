@@ -55,17 +55,24 @@
                     <li><a href="{{ pathFor 'collections.projects.create' }}">Crear Proyecto</a></li>
                   </ul> -->
 
-                  {{# if isInFavorites currentUser._id }}
-                    <a class='btn remove-from-favorites-btn red' href='#'>
-                      <i class="mdi-action-favorite left"></i>
-                      Remove from Favorites
-                    </a>
-                  {{ else }}
-                    <a class='btn add-to-favorites-btn red' href='#'>
-                      <i class="mdi-action-favorite left"></i>
-                      Add to favorites
-                    </a>
-                  {{/ if }}
+                  <!-- {{#unless currentUser}}
+                      <a class='btn user-not-logged-in red' href='#'>
+                        <i class="mdi-action-favorite left"></i>
+                        Add to favorites
+                      </a>
+                  {{else}} -->
+                    {{# if isInFavorites currentUser._id }}
+                      <a class='btn remove-from-favorites-btn red' href='#'>
+                        <i class="mdi-action-favorite left"></i>
+                        Remove from Favorites
+                      </a>
+                    {{ else }}
+                      <a class='btn add-to-favorites-btn red' href='#'>
+                        <i class="mdi-action-favorite left"></i>
+                        Add to favorites
+                      </a>
+                    {{/ if }}
+                  <!-- {{/unless}} -->
                 </div>
               </div>
             </div>
@@ -115,14 +122,14 @@
                 {{# if website }}
                   <p class="description-with-icon">
                     <i class="mdi-social-public"></i>
-                    <a href="{{ website }}" target="_blank">
+                    <a href="{{ website }}" target="_blank" style="color: #039be5;">
                       {{ website }}
                     </a>
                   </p>
                 {{/ if }}
                 <p>
-                  <a class="marias-green-text" href="{{ pathFor 'stores.show' }}">
-                    View more products from this Brand
+                  <a href="{{ pathFor 'stores.show' }}" style="color: #009688 !important;">
+                    View more products from this brand
                   </a>
                 </p>
 
@@ -158,5 +165,9 @@
       </div>
     </div>
   </div>
-
+  <style type="text/css">
+    .product {
+       font-family: "Roboto", sans-serif!important;
+    }
+  </style>
 </template>

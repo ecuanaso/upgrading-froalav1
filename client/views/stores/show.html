@@ -1,83 +1,89 @@
 <template name="storesShow">
-  <div class="container">
+  <div class="padding-left-right">
     <br>
     <div class="row">
       <div class="col s12 m8 offset-m2 l6 offset-l3">
         <img src="{{ store.logo.url }}" style="width: 100%;">
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col s12 m6 l3 example-width"></div>
-  </div>
-  <div class="row masonry">
-    {{# if Template.subscriptionsReady }}
-      <div class="col s12 m6 l3">
-        <div class="card-panel">
-          {{# with store }}
-            <h5>
-              <a class="grey-text text-darken-4" href="{{ pathFor 'stores.show' }}">
-                {{ name }}
-              </a>
-            </h5>
-            <p class="description-with-icon">
-              <i class="mdi-communication-phone"></i>
-              {{ phone }}
-            </p>
-            <p class="description-with-icon">
-              <i class="mdi-communication-email"></i>
-              {{ email }}
-            </p>
-            <p class="description-with-icon">
-              <i class="mdi-maps-store-mall-directory"></i>
-              {{ direction }}
-            </p>
-            {{# if website }}
-              <p class="description-with-icon">
-                <i class="mdi-social-public"></i>
-                <a href="{{ website }}">
-                  {{ website }}
-                </a>
-              </p>
-            {{/ if }}
-
-            {{# if discount }}
-            <p>
-              <span class="red-text">{{ discount }}% de descuento</span>
-              <span class="grey-text text-darken-2">en la tienda nombrando a decomarías</span>
-            </p>
-            {{/ if }}
-
-          {{/ with }}
-        </div>
-      </div>
-      {{# each products }}
+  
+    <div class="row">
+      <div class="col s12 m6 l3 example-width"></div>
+    </div>
+    <div class="row masonry">
+      {{# if Template.subscriptionsReady }}
         <div class="col s12 m6 l3">
-          <a href="{{ pathFor 'products.show' }}">
-            <div class="card">
-              <!-- <div class="card-image waves-effect waves-block waves-light" style="height: {{ getImageHeight }}px; background-color: {{ image.info.backgroundColor }}">
-                <img data-original="{{ image.url }}">
-              </div> -->
+          <div class="card-panel hoverable">
+            {{# with store }}
+              <h5>
+                <a class="grey-text text-darken-4" href="{{ pathFor 'stores.show' }}">
+                  {{ name }}
+                </a>
+              </h5>
+              <p class="description-with-icon">
+                <i class="mdi-communication-phone"></i>
+                {{ phone }}
+              </p>
+              <p class="description-with-icon">
+                <i class="mdi-communication-email"></i>
+                {{ email }}
+              </p>
+              <p class="description-with-icon">
+                <i class="mdi-maps-store-mall-directory"></i>
+                {{ direction }}
+              </p>
+              {{# if website }}
+                <p class="description-with-icon">
+                  <i class="mdi-social-public"></i>
+                  <a href="{{ website }}">
+                    {{ website }}
+                  </a>
+                </p>
+              {{/ if }}
 
-              <div class="card-image waves-effect waves-block waves-light" style="background-color: {{ image.info.backgroundColor }}">
-                <img data-original="{{ image.url }}" width="200" height="240">
-              </div>
+              {{# if discount }}
+              <p>
+                <span class="red-text">{{ discount }}% de descuento</span>
+                <span class="grey-text text-darken-2">en la tienda nombrando a decomarías</span>
+              </p>
+              {{/ if }}
 
-              <div class="card-content">
-                <span class="card-title grey-text text-darken-4">{{ name }}</span>
-                {{# if price }}
-                  <p class="grey-text text-darken-4">${{ format price }}</p>
-                {{/ if }}
-              </div>
-              <div class="card-action">
-                <a href="{{ pathFor 'products.show' }}" class="marias-green-text-darken">More Information</a>
-              </div>
-            </div>
-          </a>
+            {{/ with }}
+          </div>
         </div>
-      {{/ each }}
-    {{ else }}
-      {{> loading }}
-    {{/ if }}
+        {{# each products }}
+          <div class="col s12 m6 l3">
+            <a href="{{ pathFor 'products.show' }}">
+              <div class="card hoverable">
+                <!-- <div class="card-image waves-effect waves-block waves-light" style="height: {{ getImageHeight }}px; background-color: {{ image.info.backgroundColor }}">
+                  <img data-original="{{ image.url }}">
+                </div> -->
+
+                <div class="card-image waves-effect waves-block waves-light" style="background-color: {{ image.info.backgroundColor }}">
+                  <img data-original="{{ image.url }}" width="200" height="240">
+                </div>
+
+                <div class="card-content">
+                  <span class="card-title grey-text text-darken-4">{{ name }}</span>
+                  {{# if price }}
+                    <p class="grey-text text-darken-4">${{ format price }}</p>
+                  {{/ if }}
+                </div>
+                <div class="card-action">
+                  <a href="{{ pathFor 'products.show' }}" class="marias-green-text-darken">More Information</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        {{/ each }}
+      {{ else }}
+        {{> loading }}
+      {{/ if }}
+    </div>
   </div>
+  <style>
+    .row.masonry {
+      font-family: "Roboto", sans-serif!important;
+    }
+  </style>
 </template>

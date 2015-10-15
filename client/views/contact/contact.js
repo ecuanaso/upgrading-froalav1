@@ -2,11 +2,16 @@
 //   $('.parallax').parallax();
 // });
 
-// Meteor.startup(function() {
-//     reCAPTCHA.config({
-//         publickey: '6LfTtg0TAAAAAAezGp2OCfAJz4RanrU9rM_P4--O'
-//     });
-// });
+Template.contact.onCreated(function(){
+  this.subscribe('recipients');
+});
+
+
+Meteor.startup(function() {
+    reCAPTCHA.config({
+        publickey: '6LeM1Q4TAAAAAFgoLHhtl-JfvIo_-3wdPHubRJ8y'
+    });
+});
 
 AutoForm.addHooks('contactForm', {
  

@@ -1,4 +1,4 @@
-orion.dictionary.addDefinition('logo', 'home page', 
+orion.dictionary.addDefinition('logo', 'home', 
 	/**
 	 * The file attribute is a custom orion attribute
 	 * This is where orion do the magic. Just set 
@@ -13,52 +13,52 @@ orion.dictionary.addDefinition('logo', 'home page',
 	})
 );
 
-orion.dictionary.addDefinition('topHeadline', 'home page', {
+orion.dictionary.addDefinition('topHeadline', 'home', {
 	type: String,
 	label: 'Top headline'
 });
 
-orion.dictionary.addDefinition('hop1', 'home page', {
+orion.dictionary.addDefinition('hop1', 'home', {
 	type: String,
 	label: 'Hours of Operation line 1'
 });
 
-orion.dictionary.addDefinition('hop2', 'home page', {
+orion.dictionary.addDefinition('hop2', 'home', {
 	type: String,
 	label: 'Hours of Operation line 2'
 });
 
-orion.dictionary.addDefinition('hop3', 'home page', {
+orion.dictionary.addDefinition('hop3', 'home', {
 	type: String,
 	label: 'Hours of Operation line 3'
 });
 
-orion.dictionary.addDefinition('address', 'home page', {
+orion.dictionary.addDefinition('address', 'home', {
 	type: String,
 	label: 'Street Address'
 });
 
-orion.dictionary.addDefinition('city', 'home page', {
+orion.dictionary.addDefinition('city', 'home', {
 	type: String,
 	label: 'City'
 });
 
-orion.dictionary.addDefinition('state', 'home page', {
+orion.dictionary.addDefinition('state', 'home', {
 	type: String,
 	label: 'State'
 });
 
-orion.dictionary.addDefinition('zipcode', 'home page', {
+orion.dictionary.addDefinition('zipcode', 'home', {
 	type: String,
 	label: 'Zipcode'
 });
 
-orion.dictionary.addDefinition('phone', 'home page', {
+orion.dictionary.addDefinition('phone', 'home', {
 	type: String,
 	label: 'Phone Number'
 });
 
-// orion.dictionary.addDefinition('hop', 'home page', {
+// orion.dictionary.addDefinition('hop', 'home', {
 // 	type: String,
 // 	label: 'Hours of Operation',
 // 	autoform: {
@@ -72,17 +72,17 @@ orion.dictionary.addDefinition('phone', 'home page', {
 
 
 
-orion.dictionary.addDefinition('middleHeadline', 'home page', {
+orion.dictionary.addDefinition('middleHeadline', 'home', {
 	type: String,
 	label: 'Headline Above Left/Right Content'
 });
 
-orion.dictionary.addDefinition('middleHeadlineLink', 'home page', {
+orion.dictionary.addDefinition('middleHeadlineLink', 'home', {
 	type: String,
 	label: 'Headline Link'
 });
 
-orion.dictionary.addDefinition('middleHeadlineColor', 'home page', {
+orion.dictionary.addDefinition('middleHeadlineColor', 'home', {
 	type: String,
 	label: "Headline Color",
 	optional: true,
@@ -91,21 +91,24 @@ orion.dictionary.addDefinition('middleHeadlineColor', 'home page', {
 	}
 });
 
-orion.dictionary.addDefinition('left content', 'home page',
-  orion.attribute('froala')
+orion.dictionary.addDefinition('left', 'home',
+  orion.attribute('froala', {
+  	label: 'Left Content'
+  })
 );
 
-orion.dictionary.addDefinition('right content', 'home page',
-  orion.attribute('froala')
+orion.dictionary.addDefinition('right', 'home',
+  orion.attribute('froala', {
+  	label: 'Right Content'
+  })
 );
 
-
-orion.dictionary.addDefinition('title', 'home page', {
+orion.dictionary.addDefinition('title', 'home', {
 	type: String,
-	label: 'Title of the home page (SEO)'
+	label: 'Title of the home (SEO)'
 });
 
-orion.dictionary.addDefinition('description', 'home page', {
+orion.dictionary.addDefinition('description', 'home', {
 	type: String,
 	label: 'Description (SEO)',
 	autoform: {
@@ -117,16 +120,16 @@ orion.dictionary.addDefinition('description', 'home page', {
 	  }
 });
 
-orion.dictionary.addDefinition('favIcon', 'home page',
+orion.dictionary.addDefinition('favIcon', 'home',
   orion.attribute('image')
 );
 
-orion.dictionary.addDefinition('footerTitle', 'home page', {
+orion.dictionary.addDefinition('footerTitle', 'home', {
 	type: String,
 	label: 'Title (Footer)'
 });
 
-orion.dictionary.addDefinition('copyright', 'home page', {
+orion.dictionary.addDefinition('copyright', 'home', {
 	type: String,
 	label: 'Copyright Info (Footer)'
 });

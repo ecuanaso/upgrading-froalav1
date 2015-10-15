@@ -70,7 +70,14 @@ Products.attachSchema(new SimpleSchema({
   }),
   description: {
     type: String,
-    label: 'Description'
+    label: 'Description',
+    autoform: {
+      afFieldInput: {
+        type: "textarea",
+        rows: 10,
+        class:'materialize-textarea'
+      }
+    }
   },
   // price: {
   //   type: Number,

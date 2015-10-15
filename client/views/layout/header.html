@@ -16,7 +16,9 @@
         </p>
       </div>
       <div class="col l4 offset-l1 s12">
-        <!-- {{> socialIcons }} -->
+        {{#if socialIconsExist}}
+          {{> socialIcons }}
+        {{/if}}
         <p class="flow-text">
           {{ dict 'home page.address' 'No Address' }} <br>
           {{ dict 'home page.city' 'No City' }}, 
@@ -85,23 +87,57 @@
       Home
     </a>
   </li>
-   {{# each pages }}
+   <!-- {{# each pages }}
             <li class="{{ isActivePath regex='path' }}"><a href="{{ path }}" class="uppercase separated">{{ title }}</a></li>
-    {{/ each }}
-  <li class="{{ isActiveRoute regex='search' }}">
+    {{/ each }} -->
+  {{#each parentPage }}
+      <li class="{{ isActivePath regex=path }}">
+        <a href="{{ path }}" class="uppercase separated">{{ title }}</a>
+        <ul class="sub_menu">
+          {{#each childPage title }}
+          <li class="{{ isActivePath regex=path }}">
+            <a href="{{ path }}">{{ title }}<!-- <span class="fa fa-angle-right white-text right arrow-right"></span> --></a>
+
+            <ul>
+              {{#each grandChildPage title }}
+              <li class="{{ isActivePath regex=path }}">
+                <a href="{{ path }}">{{ title }}</a>
+              </li>
+              {{/each}}
+            </ul>
+          </li>
+          {{/each}}
+        </ul><!-- end sub_menu -->
+      </li>
+  {{/each}}    
+  <!-- <li class="{{ isActiveRoute regex='search' }}">
     <a href="{{ pathFor 'search' }}" class="uppercase separated">
-      Search
+      <i class="material-icons left">search</i>
     </a>
-  </li>
+  </li> -->
   <li class="{{ isActiveRoute regex='stores' }}">
     <a href="{{ pathFor 'stores.index' }}" class="uppercase separated">
       Brands
     </a>
   </li>
-  <li class="{{ isActiveRoute 'contact' }} waves-effect waves-light"><a href="{{pathFor 'contact'}}" class="uppercase separated">Contact</a></li>
+  
+  <li class="{{ isActiveRoute 'contact' }}"><a href="{{pathFor 'contact'}}" class="uppercase separated">Contact</a></li>
+
+  {{#if currentUser }}
   <li>
     <a href="{{ pathFor 'admin' }}" class="uppercase separated">
+      <!-- <i class="material-icons">person</i> -->
       My Account
     </a>
   </li>
+  {{/if}}
+  
+  <li class="{{ isActiveRoute regex='search' }}">
+    <a href="{{ pathFor 'search' }}" class="uppercase separated">
+      <i class="material-icons left">search</i>
+    </a>
+  </li>
+
+  
+  {{> subMenuCss }}
 </template>
