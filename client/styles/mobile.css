@@ -1,0 +1,15 @@
+@media (max-width: 600px){
+	div.slider>.slides {
+	    height: 240px!important;
+	}
+	.slides li>img {
+    	background-size: 100% 100%!important;
+   }
+   h3 {
+    	font-size: 1.92rem;
+   }
+
+   div.slider {
+    	height: 240px!important;
+  }
+}

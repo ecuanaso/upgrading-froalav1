@@ -4,26 +4,26 @@
       <br>
       <div class="col l2 offset-l1 hide-on-med-and-down">
         <a href="{{ pathFor 'home' }}" class="bylers-logo">
-            <img src="{{ dict 'home page.logo.url' '#' }}" alt="Byler's Logo">
+            <img src="{{ dict 'home.logo.url' '#' }}" alt="Byler's Logo" style="max-width: none;">
         </a>
       </div>
       <div class="col l3 offset-l1 s12">
-        <p class="flow-text">
-          {{ dict 'home page.topHeadline' 'No headline'}} <br>
-          {{ dict 'home page.hop1' 'No hop1' }}<br>
-          {{ dict 'home page.hop2' 'No hop2' }}<br>
-          {{ dict 'home page.hop3' 'No hop3' }}
+        <p class="flow-text marias-green-text site-text-shadow" style="font-weight:400;">
+          {{ dict 'home.topHeadline' 'No headline'}} <br>
+          {{ dict 'home.hop1' 'No hop1' }}<br>
+          {{ dict 'home.hop2' 'No hop2' }}<br>
+          {{ dict 'home.hop3'  }}
         </p>
       </div>
       <div class="col l4 offset-l1 s12">
           {{> socialIcons }}
-        <p class="flow-text">
-          {{ dict 'home page.address' 'No Address' }} <br>
-          {{ dict 'home page.city' 'No City' }}, 
-          {{ dict 'home page.state' 'No State' }}
-          {{ dict 'home page.zipcode' 'No Zipcode' }} 
-          <a class="site-blue-color" href="tel:{{ dict 'home page.phone' }}">
-            <h3><i class="fa fa-mobile"></i> {{ dict 'home page.phone' 'No Phone number' }}</h3>
+        <p class="flow-text white-text">
+          {{ dict 'home.address' 'No Address' }} <br>
+          {{ dict 'home.city' 'No City' }}, 
+          {{ dict 'home.state' 'No State' }}
+          {{ dict 'home.zipcode' 'No Zipcode' }} 
+          <a class="white-text" href="tel:{{ dict 'home.phone' }}">
+            <h3><i class="fa fa-mobile"></i> {{ dict 'home.phone' 'No Phone number' }}</h3>
           </a>
                  
         </p>
@@ -32,9 +32,9 @@
   </div>
   <nav class="header marias-green-with-text">
     <div class="nav-wrapper container">
-      <!-- <a href="{{ pathFor 'home' }}" class="brand-logo">
-        <img src="{{ dict 'home page.logo.url' }}">
-      </a> -->
+      <a href="{{ pathFor 'home' }}" class="brand-logo hide-on-large-only">
+        <img src="{{ dict 'home.logo.url' }}">
+      </a>
       <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="side-nav" id="mobile-nav">
         {{> headerItems }}

@@ -13,9 +13,9 @@ Categories.attachSchema(new SimpleSchema({
     label: 'Type'
   },
 
-  content: orion.attribute('froala', {
-      label: 'Content'
-    })
+  // content: orion.attribute('froala', {
+  //     label: 'Content'
+  //   })
 }));
 
 Categories.helpers({

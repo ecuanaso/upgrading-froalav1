@@ -1,0 +1,21 @@
+{
+  "appName": "bylers",
+  "servers": [
+    {
+      "host": "162.212.133.159",
+      "username": "root",
+      "password": "eZ6nknewq"
+    }
+  ],
+  "setupMongo": false,
+  "setupNode": false,
+  "nodeVersion": "0.10.40",
+  "setupNginx": false,
+  "sslcert": "",
+  "sslkey": "",
+  "appSiteUrl": "www.bylersstoveshoppe.com",
+  "app": ".",
+  "env": {
+    "ROOT_URL": "http://www.bylersstoveshoppe.com"
+  }
+}

@@ -12,9 +12,9 @@ orion.dictionary.addDefinition('successMessage', 'contact', {
   defaultValue: 'Thanks!'
 });
 
-orion.dictionary.addDefinition('image', 'contact',
-  orion.attribute('image')
-);
+// orion.dictionary.addDefinition('image', 'contact',
+//   orion.attribute('image')
+// );
 
 orion.dictionary.addDefinition('email', 'contact', {
   type: String,

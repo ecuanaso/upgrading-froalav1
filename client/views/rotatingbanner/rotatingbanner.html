@@ -34,5 +34,29 @@
     .slider .indicators {
         z-index: 2;
     }
+     .slider .slides {
+        background-color:#621A18;
+        margin: 0;
+        height: 400px;
+    }
+    .slider .slides li img {
+        height: 100%;
+        width: 100%;
+        background-size: inherit;
+        background-position: center;
+    }
+    .slider .indicators .indicator-item.active {
+        background-color: #f99c1c;
+    }
+
+    @media (max-width: 600px) {
+      .caption > h3, .caption  h5 {
+          font-size: 1.50rem;
+      }
+
+      .caption  h5 {
+          font-size: 1.20rem;
+      }
+    }
   </style>
 </template>

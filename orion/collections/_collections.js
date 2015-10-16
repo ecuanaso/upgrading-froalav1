@@ -153,7 +153,7 @@ Stores = new orion.collection('stores', {
         title: 'Export Visits',
         tmpl: Meteor.isClient && Template.adminExportVisits
       },
-      { data: 'hidden',className: 'center-align', orderable: false, title: 'Visibility', 
+      { data: 'hidden',className: 'center-align', orderable: false, title: 'Hidden', 
         render: function(val, type, doc) {
           var html = '<div class="switch switch-brands"><label>Off<input type="checkbox" data-id="' + doc._id + '"';
           html +=  (val) ? ' checked="checked"' : ''; 

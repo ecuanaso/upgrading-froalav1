@@ -11,10 +11,10 @@
     
   {{/ Layout }}
   {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ collection.indexPath }}">Volver</a>
+      <a href="{{ collection.indexPath }}">Return</a>
       {{# if item.canShowRemove }}
-        <a class="red-text" href="{{ collection.deletePath item._id }}">Borrar</a>
+        <a class="red-text" href="{{ collection.deletePath item._id }}">Delete</a>
       {{/ if }}
-      <a class="light-blue-text text-accent-4 save-btn" href="#">Guardar</a>
+      <a class="light-blue-text text-accent-4 save-btn" href="#">Save</a>
   {{/ Layout }}
 </template>
