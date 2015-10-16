@@ -1,13 +1,36 @@
 <template name="pagesSimple">
-  <div class="container posts-show">
+
+  <div class="padding-left-right">
+
     <div class="row">
-      <div class="col s12">
+      <div class="col s12 l12">
         <h1 class="page-title">{{ title }}</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col l8 s12">
         <div class="content">
           {{{ content }}}
         </div>
         <br><br>
       </div>
+
+      <div class="col l3 offset-l1">
+        
+        {{# each box }}
+          <div clas="col l12">
+            <div class="content">{{{ content }}}</div>
+          </div>
+          <br><br><br>
+        {{/ each }}
+        
+      </div>  
     </div>
   </div>
+  <style>
+    .padding-left-right .content {
+      font-family: "Roboto", sans-serif;
+    }
+  </style>
 </template>

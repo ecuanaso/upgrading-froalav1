@@ -6,12 +6,12 @@ Meteor.methods({
 		orion.pages.collection.update({_id:savedid}, {$set: {position: savedval}});
 	},
 
-	// 'changeBoxOrder' : function(savedid, savedval){
-	// 	check(savedid, String);
-	// 	check(savedval, String);
-	// 	console.log( savedid, savedval);
-	// 	Boxes.update({_id:savedid}, {$set: {position: savedval}});
-	// },
+	'changeBoxOrder' : function(savedid, savedval){
+		check(savedid, String);
+		check(savedval, String);
+		console.log( savedid, savedval);
+		Boxes.update({_id:savedid}, {$set: {position: savedval}});
+	},
 
 	'changeBannerOrder' : function(savedid, savedval){
 		check(savedid, String);

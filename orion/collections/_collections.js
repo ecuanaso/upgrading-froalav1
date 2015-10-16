@@ -98,7 +98,7 @@ Categories = new orion.collection('categories', {
   title: 'Categories',
   link: {
     title: 'Categories',
-    index: 30
+    index: 25
   },
   tabular: {
     columns: [
@@ -153,7 +153,7 @@ Stores = new orion.collection('stores', {
         title: 'Export Visits',
         tmpl: Meteor.isClient && Template.adminExportVisits
       },
-      { data: 'hidden',className: 'center-align', orderable: false, title: 'Hidden', 
+      { data: 'hidden',className: 'center-align', orderable: false, title: 'Visibility', 
         render: function(val, type, doc) {
           var html = '<div class="switch switch-brands"><label>Off<input type="checkbox" data-id="' + doc._id + '"';
           html +=  (val) ? ' checked="checked"' : ''; 

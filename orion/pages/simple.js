@@ -78,3 +78,13 @@ orion.pages.addTemplate({
       defaultValue: true
     }
 });
+
+orion.pages.collection.helpers({
+  // store: function () {
+  //   return Stores.find({_id: { $in: (this.storeId || []) } });
+  // },
+  box: function () {
+    //return Boxes.findOne(this.boxId); // grabs only one box
+    return Boxes.find({_id: { $in: (this.boxId || [] ) } }, { sort : { position: 1 }} ); //grabs multiple boxes
+  }
+});

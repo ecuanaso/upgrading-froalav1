@@ -7,7 +7,7 @@ orion.dictionary.addDefinition('logo', 'home',
 	 * WARNING: the url of the image will not be saved in
 	 * logo, it will be saved in logo.url.
 	 */
-	orion.attribute('file', {
+	orion.attribute('image', {
 	    label: 'Site Logo',
 	    optional: true
 	})

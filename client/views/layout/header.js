@@ -30,9 +30,6 @@ Template.header.helpers({
   },
   pages: function () {
     return orion.pages.collection.find({}, { sort: { position: 1 } });
-  },
-  socialIconsExist: function(){
-  	return;
   }
 });
 

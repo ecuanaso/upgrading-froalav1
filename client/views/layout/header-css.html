@@ -5,25 +5,24 @@
     */
     /*ul.dropdown { position: relative; }*/
     ul.dropdown  > li.active {
-        background-color: #4F5071;
+        background-color: #621A18;
         color: #fff;
     }
-    ul.dropdown li { font-weight: bold; float: left; zoom: 1; background: #0D0F42; }
-    ul.dropdown a:hover { color: #fff; }
+    ul.dropdown li { font-weight: bold; float: left; zoom: 1; background: #731F1D; }
+    ul.dropdown a:hover { color: #fff!important; }
     /*ul.dropdown a:active { color: #ffa500; }*/
     ul.dropdown li a { 
         display: block; 
         padding: 0px 15px; 
-        border-right: 1px solid #4F5071;
+        border-right: 1px solid #621A18;
         color: #ccc
     }
     ul.dropdown li.active > a {
         color: #fff;
     }
     ul.dropdown li:last-child a  { border-right: none; } /* Doesn't work in IE */
-    ul.dropdown li.hover,
-    ul.dropdown li:hover { background: #4F5071; color: black; position: relative; }
-    ul.dropdown li.hover a { color: black; }
+    ul.dropdown > li:hover { background:rgba(98, 26, 24, 0.26); color: black; position: relative; }
+    ul.dropdown > li.active {  background-color: #621A18; color: #fff; }
 
     /* 
         LEVEL TWO
@@ -37,9 +36,9 @@
     }
     ul.dropdown ul li { 
         font-weight: normal; 
-        background: #0D0F42; 
+        background: #731F1D; 
         color: #000; 
-        border-bottom: 1px solid #4F5071; 
+        border-bottom: 1px solid #621A18; 
         float: none; 
     }
                                           
@@ -50,7 +49,7 @@
         display: inline-block; 
     }
     ul.dropdown ul > li.active {
-        background-color: #4F5071;
+        background-color: #621A18;
     }
     
     .arrow-right {
@@ -65,7 +64,7 @@
         LEVEL THREE
     */
     ul.dropdown ul ul li.active {
-        background-color: #4F5071;
+        background-color: #621A18;
     }
     ul.dropdown ul ul { left: 100%; top: 0; }
     ul.dropdown li:hover > ul { visibility: visible; }

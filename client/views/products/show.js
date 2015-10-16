@@ -17,9 +17,6 @@ Template.productsShow.helpers({
 });
 
 Template.productsShow.events({
-  'click .user-not-logged-in' : function(event,template){
-      alert('Sign in to favorite this product!');
-  },
   'click .add-to-favorites-btn': function() {
     Meteor.call('addToFavorites', this._id);
   },

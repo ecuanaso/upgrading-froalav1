@@ -81,13 +81,13 @@ Router.route('/categories/:value/:type?', {
 	}
 });
 
-Router.route('/stores', {
+Router.route('/brands', {
   name: 'stores.index',
   layoutTemplate: 'layout',
-	onAfterAction: onAfterAction('Tiendas')
+	onAfterAction: onAfterAction('Brands')
 });
 
-Router.route('/stores/:_id', {
+Router.route('/brands/:_id', {
   name: 'stores.show',
   layoutTemplate: 'layout',
 	onAfterAction: function() {
@@ -137,19 +137,16 @@ Router.route('/designers', {
 
 
 /**
- * Admin
+ * Register page routes on meteor startup
  */
+Meteor.startup(function(){
+  RouterLayer.route('/:slug', {
+    name: 'mypage',
+    template: 'orionPages_mainTemplate'
+  });
 
-Router.route('/admin/projects/:_id/show', {
-  name: 'collections.projects.show',
-  layoutTemplate: 'orionMaterializeLayout'
-});
-
-Router.route('/admin/store', {
-  name: 'admin.store.update',
-  layoutTemplate: 'orionMaterializeLayout',
-  waitOn: function() {
-    return Meteor.subscribe('myStore');
+  if (RouterLayer.router == 'flow-router') {
+    RouterLayer.flowRouter.initialize();
   }
 });
 
@@ -204,6 +201,23 @@ Router.route('/admin/store', {
 
 //       }
 //  });
+
+/**
+ * Admin
+ */
+
+Router.route('/admin/projects/:_id/show', {
+  name: 'collections.projects.show',
+  layoutTemplate: 'orionMaterializeLayout'
+});
+
+Router.route('/admin/store', {
+  name: 'admin.store.update',
+  layoutTemplate: 'orionMaterializeLayout',
+  waitOn: function() {
+    return Meteor.subscribe('myStore');
+  }
+});
 
 if (Meteor.isClient) {
   orion.links.add({

@@ -16,9 +16,7 @@
         </p>
       </div>
       <div class="col l4 offset-l1 s12">
-        {{#if socialIconsExist}}
           {{> socialIcons }}
-        {{/if}}
         <p class="flow-text">
           {{ dict 'home page.address' 'No Address' }} <br>
           {{ dict 'home page.city' 'No City' }}, 
@@ -41,7 +39,7 @@
       <ul class="side-nav" id="mobile-nav">
         {{> headerItems }}
       </ul>
-      <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down dropdown">
         {{> headerItems }}
       </ul>
     </div>
@@ -65,16 +63,20 @@
     </div>
   {{/ unless }}
   <style type="text/css">
+    .home-links {
+      border-top: 1px solid #621A18;
+    }
     .home-links > ul > li.active {
       background-color: rgba(0, 0, 0, 0.14);
     }
-    ul li.active a {
+    ul li.active a,
+    ul li a:hover {
       color: #fff!important;
     }
     nav .nav-wrapper ul li a {
           color: #cccccc !important;
     }
-    nav .nav-wrapper ul li.active a {
+    nav .nav-wrapper ul > li.active > a {
           color: #fff!important;
     }
   </style>
@@ -87,34 +89,23 @@
       Home
     </a>
   </li>
-   <!-- {{# each pages }}
-            <li class="{{ isActivePath regex='path' }}"><a href="{{ path }}" class="uppercase separated">{{ title }}</a></li>
-    {{/ each }} -->
-  {{#each parentPage }}
+   {{# each parentPage }}
       <li class="{{ isActivePath regex=path }}">
         <a href="{{ path }}" class="uppercase separated">{{ title }}</a>
         <ul class="sub_menu">
           {{#each childPage title }}
-          <li class="{{ isActivePath regex=path }}">
-            <a href="{{ path }}">{{ title }}<!-- <span class="fa fa-angle-right white-text right arrow-right"></span> --></a>
-
+          <li class="{{ isActivePath regex=path }}"><a href="{{ path }}" class="uppercase separated">{{ title }}</a>
             <ul>
               {{#each grandChildPage title }}
-              <li class="{{ isActivePath regex=path }}">
-                <a href="{{ path }}">{{ title }}</a>
-              </li>
+              <li class="{{ isActivePath regex=path }}"><a href="{{ path }}" class="uppercase separated">{{ title }}</a></li>
               {{/each}}
             </ul>
           </li>
           {{/each}}
-        </ul><!-- end sub_menu -->
+        </ul>
       </li>
-  {{/each}}    
-  <!-- <li class="{{ isActiveRoute regex='search' }}">
-    <a href="{{ pathFor 'search' }}" class="uppercase separated">
-      <i class="material-icons left">search</i>
-    </a>
-  </li> -->
+   {{/ each }}
+
   <li class="{{ isActiveRoute regex='stores' }}">
     <a href="{{ pathFor 'stores.index' }}" class="uppercase separated">
       Brands
@@ -126,7 +117,6 @@
   {{#if currentUser }}
   <li>
     <a href="{{ pathFor 'admin' }}" class="uppercase separated">
-      <!-- <i class="material-icons">person</i> -->
       My Account
     </a>
   </li>
@@ -137,7 +127,5 @@
       <i class="material-icons left">search</i>
     </a>
   </li>
-
-  
-  {{> subMenuCss }}
+{{> subMenuCss }}
 </template>
