@@ -4,6 +4,7 @@ Docs = new orion.collection('docs', {
   title: 'Docs',
   link: {
     title: 'Docs',
+    index: 70
     // parent: 'media'
   },
   tabular: {

@@ -26,6 +26,20 @@ orion.dictionary.addDefinition('protableandbuiltingrills', 'parallax',
   })
 );
 
+orion.dictionary.addDefinition('playsets', 'parallax',
+  orion.attribute('image', {
+      label: 'Playsets Image',
+      optional: true
+  })
+);
+
+orion.dictionary.addDefinition('shedsandanimalenclosures', 'parallax',
+  orion.attribute('image', {
+      label: 'Sheds/Animal Enclosures Image',
+      optional: true
+  })
+);
+
 orion.dictionary.addDefinition('libertysafes', 'parallax',
   orion.attribute('image', {
       label: 'Liberty Safes Image',

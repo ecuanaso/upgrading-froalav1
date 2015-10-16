@@ -42,7 +42,33 @@
        
       </div>
     </div>
+    <div class="row">
+    {{#each parentPage }}   
+      <div class="col l2 s12 m4">
+        <h5><a class="white-text" href="{{ path }}">{{ title }}</a></h5>
+        
+          <ul>
+          {{#each childPage title}}
+            <li>
+              <a class="grey-text text-lighten-3" href="{{ path }}" style="font-size:1.30rem;">
+                {{ title }}
+              </a>
+          <ul>
+          {{#each grandChildPage title}}
+            <li style="padding-left:20px;">
+              <a class="grey-text" href="{{ path }}">{{ title }}</a>
+            </li>
+          {{/each}}
+          </ul>   
+            </li>
+          {{/each}}             
+          </ul> 
+
+      </div>
+    {{/each}}
+    </div><!-- end row -->
   </div>
+
 
   <div class="footer-copyright">
     <div class="container">
