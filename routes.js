@@ -31,7 +31,7 @@ Router.route('/', {
 Router.route('/search', {
   name: 'search',
   layoutTemplate: 'layout',
-	onAfterAction: onAfterAction('Buscar')
+	onAfterAction: onAfterAction('Search')
 });
 
 Router.route('/contact', {
@@ -104,51 +104,6 @@ Router.route('/designers', {
   layoutTemplate: 'layout',
 	onAfterAction: onAfterAction('Diseñadores')
 });
-
-
-
-/**
- * Ads
- */
-// Router.route('ads/:_id', function() {
-//   var ad = Ads.findOne(this.params._id);
-
-//   if (!ad.url) {
-//     this.response.end('Error');
-//     return;
-//   }
-
-//   Ads.update(ad._id, { $inc: { clicks: 1 } });
-
-//   var adUrl = UrlUtils.parse(ad.url, true);
-
-//   var query = {
-//     utm_source: 'Decomarias.cl',
-//     utm_medium: 'banner',
-//     utm_content: ad._id,
-//     utm_campaign: ad.location
-//   }
-
-//   adUrl.query = _.extend(query, adUrl.query);
-//   adUrl.search = null;
-//   //this.response.end(UrlUtils.format(adUrl));
-//   this.response.end('<script>window.location.replace("' + UrlUtils.format(adUrl) + '");</script>')
-// }, { where: 'server', name: 'ad.url' });
-
-
-/**
- * Register page routes on meteor startup
- */
-// Meteor.startup(function(){
-//   RouterLayer.route('/:slug', {
-//     name: 'mypage',
-//     template: 'orionPages_mainTemplate'
-//   });
-
-//   if (RouterLayer.router == 'flow-router') {
-//     RouterLayer.flowRouter.initialize();
-//   }
-// });
 
 Router.route('/:slug', function() {
     var subs = Meteor.subscribe('page', this.params.slug);

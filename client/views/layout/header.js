@@ -1,7 +1,14 @@
 Template.header.onRendered(function() {
-  $(".button-collapse").sideNav({
-    closeOnClick: true
-  });
+  // $(".button-collapse").sideNav({
+  //   closeOnClick: true
+  // });
+
+  this.$('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
 });
 
 Template.headerItems.onRendered(function(){
