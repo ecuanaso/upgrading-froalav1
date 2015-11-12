@@ -7,7 +7,8 @@ orion.attributes.registerAttribute('froala', {
     };
   },
   valueOut: function() {
-      return this.find('.editor').froalaEditor('html.get');
+      //return this.find('.editor').froalaEditor('html.get');
+      return this.find('.editor').froalaEditor('html.get', false, true);
   }
 });
 
