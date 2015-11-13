@@ -91,17 +91,17 @@ orion.dictionary.addDefinition('middleHeadlineColor', 'home', {
 	}
 });
 
-orion.dictionary.addDefinition('left', 'home',
-  orion.attribute('froala', {
-  	label: 'Left Content'
-  })
-);
+// orion.dictionary.addDefinition('left', 'home',
+//   orion.attribute('froala', {
+//   	label: 'Left Content'
+//   })
+// );
 
-orion.dictionary.addDefinition('right', 'home',
-  orion.attribute('froala', {
-  	label: 'Right Content'
-  })
-);
+// orion.dictionary.addDefinition('right', 'home',
+//   orion.attribute('froala', {
+//   	label: 'Right Content'
+//   })
+// );
 
 orion.dictionary.addDefinition('title', 'home', {
 	type: String,

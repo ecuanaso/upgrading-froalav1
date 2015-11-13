@@ -8,4 +8,5 @@ Template.pagesSimple.onCreated(function(){
 
 Template.orionMaterializeLayout.onCreated(function(){
   this.subscribe('boxes');
+  this.subscribe('orionFileSystem');
 });

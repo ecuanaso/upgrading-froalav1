@@ -8,10 +8,24 @@ ReactiveTemplates.onRendered('attribute.froala', function () {
   // initialize froala
   element.froalaEditor({
     toolbarInline: false,
-    placeholderText: '',
+    placeholderText: 'Type Something...',
     heightMin: Options.get('froala.height', 400),  // setting a default height
     key: orion.config.get('FROALA_ACTIVATION_KEY') // set license key if exists
   });
+
+  element.froalaEditor({
+      // Set the image upload URL.
+      imageManagerLoadURL: orion.filesystem.collection.find().fetch(),
+      imageManagerLoadMethod: 'get',
+      imageManagerLoadParams: {},
+      imageManagerPreloader: '',
+      imageManagerDeleteURL: '',
+      imageManagerDeleteMethod: 'post',
+      imageManagerDeleteParams: {},
+      imageManagerPageSize: 12,
+      imageManagerScrollOffset: 20 
+  });
+
 
 
   // set the current value of the attribute
